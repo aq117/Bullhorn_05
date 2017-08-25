@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:replace="base :: headstuff"></head>
+<body>
+    <nav th:replace="base :: navbar"></nav>
+
+    <div class="container">
+        <div align="center" class="jumbotron">
+            <a href="/">All Messages</a><br />
+
+            <div th:if="${message.pic} != null">
+                <hr />
+                <img th:src="${message.pic}" width="175px" height="auto" />
+                <hr />
+            </div>
+
+            <h4><b>Message: </b><span th:text="${message.content}"></span></h4>
+            <h4><b>Sent By: </b><span th:text="${message.sentby}"></span></h4>
+            <h4><b>Date: </b><span th:text="${message.dateToString()}"></span></h4>
+
+            <a href="/add">Add Message</a><br />
+        </div>
+    </div>
+
+    <nav th:replace="base :: footer"></nav>
+    <th:block th:replace="base :: jslinks"></th:block>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:fragment="headstuff">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Twitter</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body{padding-bottom: 70px;}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default" th:fragment="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Twitter</a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar navbar-default navbar-fixed-bottom"
+     th:fragment="footer">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li><a href="#">Copyright 2017 - Twitter</a></li>
+        </ul>
+    </div>
+</nav>
+<th:block th:fragment="jslinks">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:replace="base :: headstuff"></head>
+<body>
+    <nav th:replace="base :: navbar"></nav>
+
+    <div class="container">
+        <div align="center" class="jumbotron">
+
+            <form action="#"
+                  th:action="@{/process}"
+                  th:object="${message}"
+                  method="post"
+                  enctype="multipart/form-data">
+
+                <input type="hidden" th:field="*{id}" />
+
+                <div><label>Sent By :<input type="text" th:field="*{sentby}" />
+                <span th:if="${#fields.hasErrors('sentby')}"
+                      th:errors="*{sentby}"></span><br /></label></div>
+
+                <div><label>Message :<textarea rows="1" th:field="*{content}" />
+                <span th:if="${#fields.hasErrors('content')}"
+                      th:errors="*{content}"></span><br /></label></div>
+
+                <br />
+                <div><input type="file" name="file" /><br /></div>
+
+                <br />
+                <input class="btn btn-primary" type="submit" value="Post" />
+            </form>
+
+        </div>
+    </div>
+
+    <nav th:replace="base :: footer"></nav>
+    <th:block th:replace="base :: jslinks"></th:block>
+</body>
+</html>
